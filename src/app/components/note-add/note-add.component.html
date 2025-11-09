@@ -1,0 +1,24 @@
+<h3>Add a New Note</h3>
+
+<form nz-form>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="title">Title</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input nz-input [(ngModel)]="title" placeholder="Title" name="title" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="content">Content</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <textarea nz-input [(ngModel)]="content" placeholder="Content" name="content"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzOffset]="2">
+      <button nz-button [nzType]="'primary'" (click)="addNote()">Add Note</button>
+    </nz-form-control>
+    <nz-form-control [nzOffset]="2">
+      <button nz-button [nzType]="'dashed'" (click)="clearForm()">Clear</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

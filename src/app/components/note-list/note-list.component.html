@@ -1,0 +1,14 @@
+<h2>My Notes ({{ noteService.notesCount() }})</h2>
+@let notes = noteService.filteredNotes();
+<input nz-input type="text" (input)="onFilterChanged($event)" placeholder="Search notes..." />
+<nz-list nzBordered>
+  @for (note of notes; track $index) {
+  <nz-list-item>
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+    <button nz-button [nzType]="'primary'" nzDanger (click)="deleteNote(note.id)">Delete</button>
+  </nz-list-item>
+  } @if (!notes.length) {
+  <nz-list-item>No notes available.</nz-list-item>
+  }
+</nz-list>
